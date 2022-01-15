@@ -18,6 +18,8 @@ namespace Bigai.Play.Inventory.Service
 {
     public class Startup
     {
+        private const string AllowedOriginSetting = "AllowedOrigin";
+
         private const int OneSecond = 1;
         private const int TwoSeconds = 2;
         private const int FiveRetries = 5;
@@ -54,6 +56,13 @@ namespace Bigai.Play.Inventory.Service
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bigai.Play.Inventory.Service v1"));
+
+                app.UseCors(builder =>
+                {
+                    builder.WithOrigins(Configuration[AllowedOriginSetting])
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
             }
 
             app.UseHttpsRedirection();
