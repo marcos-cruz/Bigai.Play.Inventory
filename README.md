@@ -64,3 +64,10 @@ final result ```"applicationUrl": "https://localhost:5005;http://localhost:5004"
 * Type the command ```dotnet add package Bigai.Play.Common```, and press enter
 
 * Type the command ```dotnet add package Bigai.Play.Catalog.Contracts```, and press enter
+
+
+### Adding Third Party Nuget package
+
+* Right click under ```src\Bigai.Play.Inventory.Service```
+
+* Type the command ```dotnet add package Microsoft.Extensions.Http.Polly```, and press enter
