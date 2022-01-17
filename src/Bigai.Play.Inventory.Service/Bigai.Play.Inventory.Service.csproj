@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bigai.Play.Catalog.Contracts" Version="1.0.0" />
-    <PackageReference Include="Bigai.Play.Common" Version="1.0.2" />
+    <PackageReference Include="Bigai.Play.Common" Version="1.0.3" />
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>

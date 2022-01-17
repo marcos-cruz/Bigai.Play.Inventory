@@ -7,6 +7,7 @@ using Bigai.Play.Inventory.Service.Clients;
 using Bigai.Play.Inventory.Service.Dtos;
 using Bigai.Play.Inventory.Service.Entities;
 using Bigai.Play.Inventory.Service.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -15,6 +16,7 @@ namespace Bigai.Play.Inventory.Service.Controllers
     [Produces("application/json")]
     [ApiController]
     [Route("items")]
+    [Authorize]
     public class ItemsControllerController : ControllerBase
     {
         private readonly IRepository<InventoryItem> _inventoryItemsRepository;

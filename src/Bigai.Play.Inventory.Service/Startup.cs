@@ -1,5 +1,6 @@
 using System;
 using System.Net.Http;
+using Bigai.Play.Common.Identity;
 using Bigai.Play.Common.MassTransit;
 using Bigai.Play.Common.MongoDB;
 using Bigai.Play.Inventory.Service.Clients;
@@ -37,7 +38,8 @@ namespace Bigai.Play.Inventory.Service
             services.AddMongoDB()
                     .AddMongoRepository<InventoryItem>("inventoryitems")
                     .AddMongoRepository<CatalogItem>("catalogitems")
-                    .AddMassTransitWithRabbitMq();
+                    .AddMassTransitWithRabbitMq()
+                    .AddJwtBearerAuthentication();
 
             AddCatalogClient(services);
 
@@ -68,6 +70,8 @@ namespace Bigai.Play.Inventory.Service
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
